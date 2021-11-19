@@ -116,7 +116,7 @@ dotnet test
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### contact
-contact@alihaghighi.pro
+contact[at]alihaghighi[dot]pro
 
 https://www.linkedin.com/in/ali-s-haghighi/
 
