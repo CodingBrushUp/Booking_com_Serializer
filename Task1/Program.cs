@@ -1,9 +1,12 @@
 ﻿using HtmlAgilityPack;
+using System.Text;
 using System.Text.Json;
 using Task1.Models;
 
 string fileName = "c:\\Resources\\Hotel.json";
 string docUrl = $"c:\\Resources\\task 1 - Kempinski Hotel Bristol Berlin, Germany - Booking.com.html";
+var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
+UnicodeEncoding uniencoding = new UnicodeEncoding();
 
 var doc = new HtmlDocument();
 doc.Load(docUrl);
@@ -39,8 +42,13 @@ async Task SaveToJsonFile(Hotel hotel, string fileName)
     using FileStream createStream = new(fileName, FileMode.Create);
     if (createStream.CanWrite)
     {
-        var options = new JsonSerializerOptions { WriteIndented = true };
-        await JsonSerializer.SerializeAsync(createStream, hotel, options: options);
+        string serializeResult = JsonSerializer.Serialize(hotel, options: jsonOptions);
+        byte[] result = uniencoding.GetBytes(serializeResult);
+
+        createStream.Seek(0, SeekOrigin.End);
+        await createStream.WriteAsync(result, 0, result.Length);
         await createStream.DisposeAsync();
     }
+
+
 }
