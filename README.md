@@ -24,9 +24,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -118,7 +115,10 @@ dotnet test
 2. ...
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+### contact
+contact@alihaghighi.pro
 
+https://www.linkedin.com/in/ali-s-haghighi/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [product-screenshot]: images/screenshot.png
